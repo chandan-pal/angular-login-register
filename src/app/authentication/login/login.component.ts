@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
           .subscribe(
             (data) => {
               this.overlayDisplay = false;
-              localStorage.setItem('userid', data.userId);
               this.router.navigate(['home']);
             },
             (error) => {
