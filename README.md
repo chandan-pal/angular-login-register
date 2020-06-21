@@ -10,14 +10,11 @@
 
 
 <p align="center">
-    <a alt="Java">
-        <img src="https://img.shields.io/static/v1?label=Java&message=v1.8&color=blue" />
+    <a alt="Angular">
+        <img src="https://img.shields.io/static/v1?label=Angular&message=9.0.7&color=blue" />
     </a>
-    <a alt="Spring Boot">
-        <img src="https://img.shields.io/static/v1?label=Spring%20Boot&message=2.3.1.RELEASE&color=brightgreen" />
-    </a>
-    <a alt="MySQL">
-        <img src="https://img.shields.io/static/v1?label=MySQL&message=8.0.15&color=orange" />
+    <a alt="Typescript">
+        <img src="https://img.shields.io/static/v1?label=Typescript&message=3.7.5&color=brightgreen" />
     </a>
     <a alt="JWT">
         <img src="https://img.shields.io/static/v1?label=JWT&message=0.9.1&color=green" />
