@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public user;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user'))
+  }
+
+  testInterceptor() {
+    this.http.get("http://127.0.0.1:8080/test").subscribe(
+      data => {
+        console.log(data);
+        console.log('Token validated!')
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }
