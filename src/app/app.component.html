@@ -1,1 +1,11 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+
+  <a class="navbar-brand mr-auto" routerLink="../home">Home</a>
+
+  <button *ngIf="isLoggedIn" class="btn btn-danger ml-auto mr-1" (click)="logout()">Logout</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
 <router-outlet></router-outlet>
