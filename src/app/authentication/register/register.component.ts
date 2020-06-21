@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,9 @@ export class RegisterComponent implements OnInit {
 
   public loading = false;
   public submitted = false;
+  public registrationError = false;
+  public registrationSuccess = false;
+  public message;
   public registrationForm: FormGroup;
 
   constructor(
@@ -25,7 +29,7 @@ export class RegisterComponent implements OnInit {
       {
         firstName: ['', Validators.required],
         lastName: ['', ''],
-        email: ['', Validators.compose([Validators.required, Validators.email])],
+        userEmail: ['', Validators.compose([Validators.required, Validators.email])],
 			  password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       }
     )
@@ -33,11 +37,33 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.registrationError = false;
+    this.registrationSuccess = false;
     if (this.registrationForm.invalid)
     {
       return;
     }
     this.loading = true;
+    this.authService.register(this.registrationForm.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                  console.log(data);
+                  this.loading = false;
+                  if (data.error) {
+                    this.registrationError = true;
+                    this.message = "User already registered!";
+                  } else {
+                    this.registrationSuccess = true;
+                    this.message = "User registered successfully!";
+                  }
+                },
+                error => {
+                    this.loading = false;
+                    this.registrationError = true;
+                    this.message = "Error!";
+                }
+            );
 
   }
 
