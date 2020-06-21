@@ -32,18 +32,19 @@ This application is uses backened server built in my earlier project, which auth
 In this project authentication requests are made to the authentication server which is a spring boot application.
 
 Any other authentication server can also be used with this client side angular application as long as it is able to authenticate a user and send back a valid token.
-features:
-  1. Registration and login UI using angular.
-  2. Utilizes angular modules.
-  3. Utilizes angular routing.
-  4. Utilizes angular Components.
-  5. Utilizes angular Services.
-  6. Utilizes angualar forms modules to provide most checks on registrations and login forms.
-  7. Stores token in local storage for client side session check.
-  8. Utilizes HTTPInterceptor to attach token in 'Authorization' header once user is logged in.
-  9. Gives logout functionality (by removing user tokens from local storage).
-  10. Can be plugged with any authentication srever which is capable of sending valid tokens after autheticating a user.
-  11. Uses Authentication guard (implementing canActivate) to check and redirect to login if user session is not valid.
+
+## features ##
+  - Registration and login UI using angular.
+  - Utilizes angular modules.
+  - Utilizes angular routing.
+  - Utilizes angular Components.
+  - Utilizes angular Services.
+  - Utilizes angualar forms modules to provide most checks on registrations and login forms.
+  - Stores token in local storage for client side session check.
+  - Utilizes HTTPInterceptor to attach token in 'Authorization' header once user is logged in.
+  - Gives logout functionality (by removing user tokens from local storage).
+  - Can be plugged with any authentication srever which is capable of sending valid tokens after autheticating a user.
+  - Uses Authentication guard (implementing canActivate) to check and redirect to login if user session is not valid.
 
 
 ## Setting up Development server
