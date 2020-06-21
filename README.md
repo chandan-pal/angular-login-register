@@ -1,10 +1,5 @@
-<h1 align="center">
-  <br>
-  
-  <br>
-  angular-login-register
-  <br>
-</h1>
+# angular-login-register #
+
 
 <h4 align="center">an angular application template for login and registration</h4>
 
@@ -40,11 +35,11 @@ Any other authentication server can also be used with this client side angular a
   - Utilizes angular Components.
   - Utilizes angular Services.
   - Utilizes angualar forms modules to provide most checks on registrations and login forms.
-  - Stores token in local storage for client side session check.
-  - Utilizes HTTPInterceptor to attach token in 'Authorization' header once user is logged in.
+  - Stores token in **localstorage** for client side session check.
+  - Utilizes **HTTPInterceptor** to attach token in 'Authorization' header once user is logged in.
   - Gives logout functionality (by removing user tokens from local storage).
   - Can be plugged with any authentication srever which is capable of sending valid tokens after autheticating a user.
-  - Uses Authentication guard (implementing canActivate) to check and redirect to login if user session is not valid.
+  - Uses Authentication guard (implementing **canActivate**) to check and redirect to login if user session is not valid.
 
 
 ## Setting up Development server
