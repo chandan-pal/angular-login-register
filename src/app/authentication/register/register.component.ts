@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
             .subscribe(
                 data => {
                   this.loading = false;
-                  if (data.error) {
+                  if (JSON.parse(JSON.stringify(data)).error) {
                     this.registrationError = true;
                     this.message = "User already registered!";
                   } else {
