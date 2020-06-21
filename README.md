@@ -25,7 +25,7 @@
 </p>
 
 
-## Concept ##
+## Overview ##
 This is an angular application to demonstrate user registration and authentication functionality using JWT (JSON Web Tokens).
 
 This application can be used as a template to create a standalone client side login and registration UI.
