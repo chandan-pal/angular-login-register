@@ -27,18 +27,20 @@ export class AuthService {
       };
       return this.http.post<User>(environment.authUrl, {"userEmail": email, "password": password}, httpOptions)
         .pipe(map(user => {
-          localStorage.setItem('id_token', user.jwt);
-          localStorage.setItem('expires_at', user.expDate);
+          localStorage.setItem('user', JSON.stringify(user));
           return true;
         }))
     }
 
     isLoggedIn() {
-      const token = localStorage.getItem('id_token');
-      const sExpDate = localStorage.getItem('expires_at');
-      if (token && sExpDate && new Date().getTime() < new Date(sExpDate).getTime())
-      {
-        return true;
+      const user = JSON.parse(localStorage.getItem('user')) as User;
+      if (user) {
+        const token = user.jwt;
+        const sExpDate = user.expDate;
+        if (token && sExpDate && new Date().getTime() < new Date(sExpDate).getTime())
+        {
+          return true;
+        }
       }
       return false;
     }
