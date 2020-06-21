@@ -27,7 +27,8 @@ This is an angular application to demonstrate user registration and authenticati
 
 This application can be used as a template to create a standalone client side login and registration UI.
 
-This application is uses backened server built in my earlier project, which authenticates a user and generates JSON Web Token for valid request. This project can be accessed from the follwing link - <a href="https://github.com/chandan-pal/login-register-jwt-mysql"><b>login-register-jwt-mysql</b></a>
+This application is uses backened server built in my earlier project, which authenticates a user and generates JSON Web Token for valid request. This project can be accessed from the follwing link - <a href="https://github.com/chandan-pal/login-register-jwt-mysql"><b>login-register-jwt-mysql</b></a>.
+
 In this project authentication requests are made to the authentication server which is a spring boot application.
 
 Any other authentication server can also be used with this client side angular application as long as it is able to authenticate a user and send back a valid token.
