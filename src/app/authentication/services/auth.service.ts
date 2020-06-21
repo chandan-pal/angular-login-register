@@ -23,7 +23,6 @@ export class AuthService {
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
-          'Access-Control-Allow-Origin': '*'
         })
       };
       return this.http.post<User>(environment.authUrl, {"userEmail": email, "password": password}, httpOptions)
@@ -42,5 +41,14 @@ export class AuthService {
         return true;
       }
       return false;
+    }
+
+    register(user: User) {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+        })
+      };
+      return this.http.post(environment.registrationUrl, user, httpOptions)
     }
 }
