@@ -53,4 +53,9 @@ export class AuthService {
       };
       return this.http.post(environment.registrationUrl, user, httpOptions)
     }
+
+    logout() {
+      localStorage.removeItem('user');
+      this.router.navigate(['login']);
+    }
 }
