@@ -48,7 +48,6 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                  console.log(data);
                   this.loading = false;
                   if (data.error) {
                     this.registrationError = true;
